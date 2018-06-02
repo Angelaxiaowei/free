@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="./js/jquery-3.2.0.min.js"></script>
+		<title>xiaomi</title>
+		<style type="text/css">
+			html,body,p,ul,li,img,button,a,h3{
+				margin:0;
+				padding:0;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			.top{
+				background-image: url("./imagess/top-bar.png");
+				background-repeat: no-repeat;
+				height: 120px;
+				position: relative;
+				background-position: -550px 0;
+			}
+			.head{
+				background-color: #333;
+				height: 40px;
+			}
+			.head-left p{
+				font-size: 12px;
+				color: #b0b0b0;
+				line-height: 40px;
+			}
+			.head span{
+				font-size: 12px;
+				color: #424242;
+				line-height: 40px;
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+			.head-left p,span{
+				float: left;
+			}
+			.head-left p:hover{
+				color: #fff;
+			}
+			.first{
+				margin-left: 80px;
+			}
+			.second{
+				margin-left: 300px;
+			}
+			.top-right{
+				background-color: #424242;
+				height: 40px;
+				width: 120px;
+				margin-left: 1150px;
+			}
+			.topbar-top p{
+				font-size: 12px;
+				color: #b0b0b0;
+				line-height: 40px;
+				padding-left: 32px;
+			}
+			.top-right:hover{
+				background-color: #fff;
+			}
+			.top-right:hover .topbar{
+				display: block;
+			}
+			.top-right p:hover{
+				color: #ff6700;
+			}
+			.topbar{
+				width: 316px;
+				height: 40px;
+				background-color: #fff;
+				padding:15px;
+				position: absolute;
+				top: 160px;
+				left:924px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+				display: none;
+				z-index: 3;
+			}
+			.topbar p{
+				color: #333;
+				font-size: 12px;
+				text-align: center;
+				line-height: 40px;
+			}
+			.title{
+				height: 100px;
+				position: relative;
+				z-index: 1
+			}
+			.title-middle{
+				width: 1226px;
+				margin:0 auto;
+				position: relative;
+			}
+			.title-img{
+				float: left;
+				margin-top: 22px;
+			}
+			.clearfix::after{
+				clear:both;
+				display: block;
+				content: "";
+				height: 0;
+			}
+			.title-con ul{
+				text-align: center;
+				margin-left: 45px;
+			}
+			.title-con ul li{
+				float: left;
+			}
+			.title-con ul li a{
+				color: #333;
+				font-size: 16px;
+				line-height: 100px;
+				padding-left:20px;
+				position: relative;
+    			z-index: 1;
+			}
+			.title-con{
+				float: left;
+				width: 850px;
+				height: 100px;
+			}
+			.title-con a{
+				display: block;
+			}
+			.title-con ul li a:hover{
+				color: #ff6700;
+			}
+			.search input{
+				position: absolute;
+			    top: 25px;
+			    right: 52px;
+			    z-index: 1;
+			    width: 223px;
+			    height: 48px;
+			    padding: 0 10px;
+			    border: 1px solid #e0e0e0;
+			}
+			.search button{
+				position: absolute;
+			    right: 0;
+			    top: 25px;
+			    z-index: 2;
+			    width: 52px;
+			    height: 50px;
+			    border: 1px solid #e0e0e0;
+			}
+			.search button:hover{
+				background-color: #ff6700;
+			}
+			.menu{
+				width: 100%;
+				display: block;
+			    height: 229px;
+			    padding-top: 0px;
+			    margin-top: 0px;
+			    padding-bottom: 0px;
+			    margin-bottom: 0px;
+			    z-index: 2;
+			}
+			.nei{
+				position: absolute;
+			    top: 34px;
+			    right: 79px;
+			    z-index: 2;
+			    text-align: right;
+			}
+			.nei a{
+				display: inline-block;
+			    margin-left: 5px;
+			    padding: 0 5px;
+			    font-size: 12px;
+			    background: #eee;
+			    color: #757575;
+			    -webkit-transition: all .2s;
+			    transition: all .2s;
+			}
+			.nei a:hover{
+				background-color: #ff6700;
+				color: #fff;
+			}
+/*			.home-hero-container {
+			    position: relative;
+			    z-index: 10;
+			}
+
+			.container {
+			    width: 1226px;
+			    margin-right: auto;
+			    margin-left: auto;
+			}
+			.home-hero {
+			    position: relative;
+			    margin-bottom: 26px;
+			}
+			.site-ctegory-list  a{
+				color: #fff;
+				margin-bottom: 10px;
+			}
+			.home-hero-slider {
+			    position: relative;
+			    height: 460px;
+			    overflow: hidden;
+			    _zoom: 1;
+			}
+			.site-ctegory-list{
+
+			}
+			.site-ctegory-list ul {
+			    border: 0;
+			    background: #333;
+			    background: rgba(0,0,0,0.3);   
+			    width: 234px;
+			    position: relative;
+			    display: block;
+            }*/
+			.hide{
+        	    display: none;
+           }
+            .clearfix::after {
+	            clear: both;
+	            display: block;
+	            content: "";
+	            height: 0;
+	        }
+	        @font-face {
+				  font-family: 'iconfont';
+				  src: url('iconfont.eot');
+				  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+				  url('iconfont.woff') format('woff'),
+				  url('iconfont.ttf') format('truetype'),
+				  url('iconfont.svg#iconfont') format('svg');
+			}
+			.iconfont{
+				  font-family:"iconfont" !important;
+				  font-size:16px;font-style:normal;
+				  -webkit-font-smoothing: antialiased;
+				  -webkit-text-stroke-width: 0.2px;
+				  -moz-osx-font-smoothing: grayscale;
+			}
+		.hot-content {
+			position: relative;
+    		z-index: 10;
+    		width: 1226px;
+		    margin-right: auto;
+		    margin-left: auto;
+		}
+		.hot-content .slide {
+			position: relative;
+			margin-bottom: 26px;
+		    height: 460px;
+		    overflow: hidden;
+		    width: 100%;
+		    margin: 0;
+		    padding: 0;
+		}
+		.hot-content .phone-bar {
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: 999;
+		    width: 234px;
+		    height: 460px;
+		    font-size: 14px;
+		 		}
+		.left-list {
+			height: 420px;
+		    border: 0;
+		    color: #fff;
+		    background: rgba(0,0,0,0.6);
+		    margin: 0;
+		    padding: 20px 0;
+		}
+		.left-list .title {
+			position: relative;
+		    display: block;
+		    padding-left: 30px;
+		    height: 42px;
+		    line-height: 42px;
+		    color: #fff;
+		}
+		.left-list .title:hover {
+			background: #ff6700;
+		}
+		.left-list>li .title-box {
+			position: absolute;
+			display: none;
+			z-index: 9999;
+			width: 820px;
+			height: 460px;
+			left: 234px;
+			top: 0;
+			background: #fff;
+		}
+		.left-list>li:hover .title-box {
+			display: block;
+		}
+		.left-list>li .title-box .mi-item {
+			float: left;
+			margin-left: 20px;
+			width: 170px;
+   			padding-right: 0;
+   			display: block;
+		    padding: 18px 35px 18px 20px;
+		    line-height: 40px;
+		    color: #333;
+		}   	
+		.hot-content .slide .slide-box {
+			width: auto;
+    		position: relative;
+    		overflow: hidden;
+		}
+		.hot-content{
+			width: 1226px;
+		}
+		.hot-content .slide .slide-box img {
+			width: 1226px;
+    		height: 460px;
+		}
+		.hot-content .slide a {
+			position: absolute;
+		    top: 50%;
+		    z-index: 999;
+		    width: 41px;
+		    height: 69px;
+		    margin-top: -35px;
+		    text-indent: -9999px;
+		    overflow: hidden;
+		    outline: 0;
+		}
+		.hot-content .slide .pre {
+			left: 234px;
+			background: url("./imagess/icon-slides.png") no-repeat -84px 50%;
+		}
+		.hot-content .slide .pre:hover {
+			background: url("./imagess/icon-slides.png") no-repeat 0 50%;
+		}
+		.hot-content .slide .next {
+			right: 0;
+			background: url("./imagess/icon-slides.png") no-repeat -125px 50%;
+		}
+		.hot-content .slide .next:hover {
+			background: url("./imagess/icon-slides.png") no-repeat -43px 50%;
+		}
+		.hot-content .slide .icon {
+			display: block;
+		    bottom: 17px;
+		    right: -235px;
+		    width: 400px;
+		    text-align: right;
+		    position: absolute;
+		    z-index: 999;
+		}
+		.hot-content .slide .icon li {
+			float: left;
+		    width: 6px;
+		    height: 6px;
+		    margin: 0 5px;
+		    border: 2px solid #fff;
+		    border-color: rgba(0,0,0,0.4);
+		    border-radius: 10px;
+		    text-align: left;
+		    text-indent: -9999px;
+		    overflow: hidden;
+		}
+		.hot-content .slide .icon li.changed {
+            background-color: #fff;
+        }
+        .hot-buttom {
+        	width: 1226px;
+        	position: relative;
+        	left: 60px;
+        	margin-top: 14px;
+        }
+        .hot-buttom img {
+        	margin-left: 4px;
+        	width: 296px;
+        	height: 170px;
+        }
+        .star-box .star-head {
+        	position: relative;
+        	margin: 0 auto;
+        	width: 1226px;
+    		height: 58px;
+        }
+        .star-box .star-head h2 {
+		    font-size: 22px;
+		    font-weight: 400;
+		    line-height: 58px;
+		    color: #333;
+        }
+        .star-box .star-head .move {
+        	position: absolute;
+		    top: 24px;
+		    right: 0;
+        }
+        .star-box .star-head .move .contral {
+		    width: 24px;
+		    height: 16px;
+		    padding: 3px 5px;
+		    border: 1px solid #d0d0d0;
+		    font-size: 16px;
+		    line-height: 16px;
+        }
+        .star-box .star-head .move .contral.move-left{
+
+        }
+        .star-box .star-head .move .contral.move-right {
+
+        }
+        .star-box .star-tab {
+        	position: relative;
+		    width: 1226px;
+		    overflow: hidden;
+		    padding-bottom: 40px;
+		    margin: 0 auto;
+        }
+        .star-box .star-tab .star-item {
+        	height: 340px;
+    		overflow: hidden;
+        }
+        .star-item ul{
+            width: 1226px;
+            height: 340px;
+        }
+/*        .star-item ul li img{
+        	width: 160px;
+        	height: 160px;
+        	float: left;
+        	margin: 5px 30px; 
+        	padding-right: 25px;
+       }*/
+        .star-item li{
+        	background: #fff;
+        	width: 1226px;
+            float: left;
+        	/*position: relative;*/
+        }
+        .box{
+        	margin-right: 10px;
+        	width: 230px;
+            background: #f5f5f5;
+            height: 340px;
+        }
+        .box img{
+            width: 160px;
+            height: 160px;
+            padding-left: 25px;
+            padding-top: 25px;
+        }
+        .box h3 {
+            font-size: 14px;
+            padding-left:70px;
+            padding-top: 25px;
+        }
+        .one{
+            height: 18px;
+		    margin: 0 20px 12px;
+		    font-size: 12px;
+		    text-overflow: ellipsis;  /*内容多显示省略号*/
+		    white-space: nowrap;
+		    overflow: hidden;  /*超出的部分被隐藏*/
+		    _zoom: 1;   /*缩放比例*/
+		    color: #b0b0b0;
+		    padding-left: 15px;
+		    padding-top: 10px;
+        }
+        .two{
+        	color: #ff6709;
+        	padding-left: 80px;
+        }
+		</style>
+	</head>
+	<body>
+		<div class="top "></div>
+		<div class="head">
+			<div class="head-left">
+				<p class="first">小米商城</p><span>|</span>
+				<p>MIUI</p><span>|</span>
+				<p>米聊</p><span>|</span>
+				<p>游戏</p><span>|</span>
+				<p>多看阅读</p><span>|</span>
+				<p>云服务</p><span>|</span>
+				<p>金融</p><span>|</span>
+				<p>米币</p><span>|</span>
+				<p>小米商城手机版</p><span>|</span>
+				<p>问题反馈</p><span>|</span>
+				<p>Select Region</p>
+				<p class="second">登录</p><span>|</span>
+				<p>注册</p><span>|</span>
+				<p>消息通知</p>
+			</div>
+			<div class="top-right">
+				<div class="topbar-top"> 
+					<p>购物车（0）</p>
+				</div>	
+				<div class="topbar">
+					<div class="loading">
+						<p>购物车中还没有商品，赶紧选购吧！</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="title">
+			<div class="title-middle clearfix">
+				<div class="title-img"><img src="./imagess/mi.png"></div>
+				<div class="title-con">
+					<ul>
+						<li><a href="#">全部商品分类</a></li>
+						<li><a href="#">小米手机</a>
+							<div class="menu"></div>
+						</li>
+						<li><a href="#">红米</a></li>
+						<li><a href="#">笔记本</a></li>
+						<li><a href="#">电视</a></li>
+						<li><a href="#">盒子</a></li>
+						<li><a href="#">新品</a></li>
+						<li><a href="#">路由器</a></li>
+						<li><a href="#">智能硬件</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">社区</a></li>
+					</ul>
+				</div>
+				<div class="search">
+					<input>
+				<!-- 	<button><img src="../imagess/sou.png"></button> -->
+                    <div class="nei">
+                    	<a href="#">红米4X</a>
+                    	<a href="#">小米Note 3 直降300</a>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<div class="hot-content">
+		<div class="slide">
+				<ul class="slide-box">	
+					<li><img src="./imagess/pi1.png"></li>
+					<li><img src="./imagess/pi2.png"></li>
+					<li><img src="./imagess/pi3.png"></li>
+					<li><img src="./imagess/pi4.png"></li>
+					<li><img src="./imagess/pi5.png"></li>
+					<li><img src="./imagess/pi6.png"></li>
+				</ul>
+				<ul class="icon clearfix">
+					<li class="changed"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div>
+					<a href="javascript:void(0)" class="pre"></a>
+					<a href="javascript:void(0)" class="next"></a>
+				</div>
+			</div>
+		<div class="phone-bar">
+			<ul class="left-list clearfix">
+				<li>
+					<a class="title" href="#">手机 电话卡</a>
+					<div class="title-box">
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>	
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>
+						<a class="mi-item" href="#">
+							<img src="./imagess/mi1.png">
+							<span>小米note3</span>
+							<span class="buy">购买</span>
+						</a>					
+					</div>
+				</li>
+				<li><a class="title" href="#">手机 电话卡</a></li>
+				<li><a class="title" href="#">笔记本</a></li>
+				<li><a class="title" href="#">电视机 盒子</a></li>
+				<li><a class="title" href="#">路由器 智能硬件</a></li>
+				<li><a class="title" href="#">移动电源 电池 插线板</a></li>
+				<li><a class="title" href="#">耳机 音响</a></li>
+				<li><a class="title" href="#">保护套 贴膜</a></li>
+				<li><a class="title" href="#">线材 支架 存储卡</a></li>
+				<li><a class="title" href="#">箱包 服饰 鞋 眼镜</a></li>
+				<!-- <li><a class="title" href="#">米兔 生活周边</a></li> -->
+			</ul>		
+		</div> 
+	</div>
+	<div class="hot-buttom clearfix">
+		<img src="./imagess/AOG.png">
+		<img src="./imagess/bu1.png">
+		<img src="./imagess/bu1.png">
+		<img src="./imagess/bu3.png">
+	</div>
+	<div class="star-box">
+		<div class="star-head">
+			<h2>小米明星单品</h2>
+			<div class="move">
+				<a href="#" class="contral move-left"></a>
+				<a href="#" class="contral move-right"></a>
+			</div>
+		</div>
+		<div class="star-tab">
+			<div class="star-item">
+				<ul class="txt"> 
+                    <li>
+                    	<div class="box">
+                    		<img src="./imagess/77.png">
+                    		<h3>小米Max 2</h3>
+                            <p class="one">大屏大电量，享多重好礼</p>
+                            <p class="two">199元</p>
+                    	</div>
+                    	<div class="box">
+                    		<img src="./imagess/77.png">
+                    		<h3>小米Max 2</h3>
+                            <p class="one">大屏大电量，享多重好礼</p>
+                            <p class="two">199元</p>
+                    	</div>
+                    	<div class="box">
+                    		<img src="./imagess/77.png">
+                    		<h3>小米Max 2</h3>
+                            <p class="one">大屏大电量，享多重好礼</p>
+                            <p class="two">199元</p>
+                    	</div>
+                    	<div class="box">
+                    		<img src="./imagess/77.png">
+                    		<h3>小米Max 2</h3>
+                            <p class="one">大屏大电量，享多重好礼</p>
+                            <p class="two">199元</p>
+                    	</div>
+                    	<div class="box">
+                    		<img src="./imagess/77.png">
+                    		<h3>小米Max 2</h3>
+                            <p class="one">大屏大电量，享多重好礼</p>
+                            <p class="two">199元</p>
+                    	</div>
+                    </li>
+                     <!-- <a href="#"><li><img src="../imagess/77.png"></li></a>
+                     <a href="#"><li><img src="../imagess/88.png"></li></a>
+                     <a href="#"><li><img src="../imagess/99.png"></li></a>
+                     <a href="#"><li><img src="../imagess/10.png"></li></a>
+                     <a href="#"><li><img src="../imagess/11.png"></li></a>
+ -->
+				</ul>
+			</div>
+		</div>
+	</div>
+		<script type="text/javascript">
+		$(function(){
+		var index = $(".icon li.changed").index()			
+		//左侧点击事件
+		function goLeft(){
+			if(index == 6) {index = -1;}
+				$(".icon li").eq(index+=1).addClass("changed").siblings().removeClass("changed");
+				$(".slide-box li").eq(index).fadeIn().siblings().fadeOut();
+			}
+		//右侧点击事件	
+		function goRight(){	
+			if(index == 0) {index = 8;}
+				$(".icon li").eq(index-=1).addClass("changed").siblings().removeClass("changed");
+				$(".slide-box li").eq(index).fadeIn().siblings().fadeOut();
+		}
+		// 左侧点击
+		$(".pre").click(function(){
+			goRight()	
+		});	
+		// 左侧点击
+		$(".next").click(function(){
+			goLeft()
+		});
+		//定时器方法
+		function exportTimer(){
+			timer = setInterval(function(){
+				goLeft();
+			},10000);
+		}
+		//第一次执行定时器
+		exportTimer();
+		//左侧触碰停止开始定时器
+		$(".pre, .slide-box").hover(
+			function(){
+				clearInterval(timer)
+			},
+			function(){
+				exportTimer()
+			}
+		)
+		//右侧触碰停止开始定时器
+		$(".next").hover(
+			function(){
+				clearInterval(timer)
+			},
+			function(){
+				exportTimer()
+			}
+		)
+		$(".icon li").click(function(){
+   			var index = $(this).index();
+   			$(".slide-box li").eq(index).fadeIn().siblings().fadeOut();
+     		$(this).addClass("changed").siblings().removeClass("changed");
+  		});
+	});
+	</script>
+	</body>
+	</html>

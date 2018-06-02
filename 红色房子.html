@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>房子红色网页设计</title>
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		html,body,ul,li,span,p,h1{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			font-family: "Microsoft Yahei";
+		}
+		.top{
+			height: 50px;
+			background-image: url("./image/7.gif");
+			background-position: 10px -666px;
+		}
+		.top-left{
+			width: 1250px;
+			height: 50px;
+			margin: 0 auto;
+		}
+		.top-left ul li{
+			float: left;
+			list-style: none;
+			line-height: 50px;
+			padding: 0 12px;
+			font-size: 14px;
+		}
+		.top-left ul li a{
+			text-decoration: none;
+			color: #fff;
+		}
+		.top-left span img{
+			margin: 8px 0 0 3px;
+		}
+		.top-left ul li:hover{
+			background-color: #A52A2A;
+		}
+		.top-left span:hover{
+			background-color: #A52A2A;
+		}
+		.clearfix{
+			content: "";
+			display: block;
+			height: 0;
+			clear: both;
+		}
+		span{
+			float: left;
+			padding: 0 12px;
+			line-height: 50px;			
+		}
+		span a{
+			text-decoration: none;
+			color: #fff;
+			font-size: 14px;
+		}
+		.img{
+			float: right;
+			background-image: url("./image/2.jpg");
+			background-repeat: no-repeat;
+			width: 128px;
+		    height: 32px;
+		    position: relative;
+		    top: 9px;
+		}
+		.register p{
+			float: right;
+			padding-top: 15px;
+			margin: 0 0 0 5px;
+		    font-size: 14px;
+		    color: #fff;
+		    width: 45px;
+    		height: 20px;
+		}
+		.line{
+			float: right;
+		    width: 1px;
+		    height: 20px;
+		    margin-top: 17px;
+		    background: #fff;
+		    position: relative;
+		    right: 5px;
+		}
+		.entry p{
+			float: right;
+			padding-top: 15px;
+		    font-size: 14px;
+		    color: #fff;
+		    width: 45px;
+    		height: 20px;
+		}
+		.top-middle p{
+			float: right;
+			padding-top: 15px;
+		    font-size: 14px;
+		    color: #fff;
+		    width: 45px;
+    		height: 20px;
+		}
+		.order{
+			width: 16px;
+			height: 16px;
+			float: right;
+			background-image: url("./image/9.png");
+			background-position: 16px -80px;
+			position: relative;
+			top: 17px;
+			margin-right: 3px;
+		}
+		.top-right p{
+			float: right;
+			padding-top: 15px;
+		    font-size: 14px;
+		    color: #fff;
+		    width: 45px;
+    		height: 20px;
+		}
+		.look{
+			width: 16px;
+			height: 16px;
+			float: right;
+			background-image: url("./image/9.png");
+			position: relative;
+			top: 17px;
+			margin-right: 3px;
+		}
+		.background-img{
+			height: 455px;
+			background-image: url("./image/11.jpg");
+			background-position: -365px -10px;
+		}
+		.background-middle{
+			width: 760px;
+		    height: 220px;
+		    background-color: #061220;
+		    background: rgba(0,0,0,0.6);
+		    margin: 0 auto;
+		    position: relative;
+		    top:100px;
+		}
+		.background-content{
+			width: 720px;
+		    height: 200px;
+		    padding: 40px 0 0 40px;
+		}
+		.logo{
+			float: left;
+		    width: 220px;
+		    height: 54px;
+			color: #fff;
+		}
+		.nationwide p{
+			height: 18px;
+			font-size: 14px;
+			color: white;
+			float: left;
+			padding-top: 12px;
+		}
+		.nationwide .city:hover{
+			border-bottom: 1px solid #fff;
+		}
+		.city{
+			height: 18px;
+			font-size: 14px;
+			color: white;
+			float: left;
+			padding-top: 12px;
+		}
+		.character{
+			float: left;
+			width: 720px;
+			height: 36px;
+			line-height: 36px;
+			font-size: 15px;
+		}
+		.character li{
+			list-style: none;
+			float: left;
+			padding: 0 10px;
+		}
+		.character span{
+			float: left;
+			color: #fff;
+			width: 30px;
+			height: 36px;
+			padding: 0 5px 0 10px;
+			line-height: 36px;
+		}
+		.character a{
+			text-decoration: none;
+			color: #fff;
+		}
+		.character img{
+			position: relative;
+			top: -3px;
+		}
+		.character ul li:hover{
+			border-radius: 3px;
+			background-color: #c00
+		}
+		.search{
+			float: left;
+		    width: 610px;
+		    height: 39px;
+		    color: #888;
+		    line-height: 42px;
+		    font-size: 12px;
+		    position: relative;
+		    top: 10px;
+		    border: none;
+		    border-radius: 1px;
+		}
+		.search-img{
+			float: left;
+		    width: 60px;
+		    height: 42px;
+		    background: url("./image/7.gif");
+		    background-position: 0 -285px;
+			position: relative;
+			top: 11px;
+		}
+    	.buttom{
+    		width: 100%;
+   			height: 54px;
+   			border-bottom: 1px solid #ddd;
+   			padding: 25px 0;
+    	}
+    	.middle{
+			width: 1280px;
+			height: 54px;
+			margin: 0 auto;
+    	}
+    	.buy, .sell, .rent, .decoration, .market{
+    		width: 240px;
+    		float: left;
+		    height: 54px;
+		    border-right: 1px dashed #ddd;
+    	}
+    	.middle p{
+    		float: left;
+		    width: 80px;
+		    height: 54px;
+		    line-height: 54px;
+		    font-size: 28px;
+		    color: #c00;
+    	}
+    	.new{
+    		float: left;
+    		line-height: 27px;
+		    font-size: 14px;
+		    margin-left: 80px; 
+		    position: relative;
+		    bottom: 55px;
+    	}
+    	.middle ul li{
+    		float: left;
+			list-style: none;			
+    	}
+    	.buttom a{
+    		text-decoration: none;
+    		color: black;
+    	}
+    	.n1{
+			margin-right: 48px;
+    	}
+    	.n2{
+    		margin: 5px 34px 0 0;
+    	}
+    	.n3{
+    		margin-top: 5px;
+    	}
+    	.sell{
+    		width: 185px;
+    		margin-left: 26px;
+    	}
+    	.rent, .decoration, .market{
+    		margin-left: 26px;
+    	}
+    	.decoration .n1{
+    		margin-right: 30px;
+    	}
+    	.decoration .n2{
+    		margin: 5px 28px 0 0;
+    	}
+    	.market .n1{
+    		margin-right: 34px;
+    	}
+    	.left{
+    		width: 36px;
+		    height: 180px;
+		    position: fixed;
+		    left: 5px;
+    	}
+    	.buttom ul li a:hover{
+			color: red;
+			border-bottom: 1px solid red;
+    	}
+    	.download{
+    		width: 36px;
+    		background: url("./image/13.jpg") no-repeat;
+		    position: relative;
+		    bottom: 380px;
+		    height: 180px;		
+    	}
+    	.download:hover{
+    		background-position: 0px -180px;12
+    	}
+    	.house{
+    		width: 1200px;
+    		height: 306px;
+    		margin: 0 auto;
+    		position: relative;
+    		bottom: 145px;
+    	}
+    	.title{
+    		width: 1187px;
+		    height: 48px;
+		    border: 1px solid #ddd;
+		    background-color: #f1f1f1;
+		}
+		.hot,.brand,.good{
+			float: left;
+			width: 395px;
+			text-align: center;
+			line-height: 48px;
+		}
+		.hot h1{
+			font-size: 18px;
+			height: 46px;
+		}
+		.brand h1{
+			font-size: 18px;
+			height: 46px;
+		}
+		.good h1{
+			font-size: 18px;
+			height: 46px;
+		}
+		.hot,.brand{
+			border-right: 1px solid #ddd;
+		}
+		.hot h1:hover{
+			background-color: #fff;
+			border-top: 2px solid #c00;
+		}
+		.brand h1:hover{
+			background-color: #fff;
+			border-top: 2px solid #c00;
+		}
+		.good h1:hover{
+			background-color: #fff;
+			border-top: 2px solid #c00;
+		}
+		.bar{
+			height: 50px;
+			width: 260px;
+			border:1px solid #ddd;
+			margin-left: 5px;
+		}
+		.address{
+			height: 50px;
+			width: 125px;
+			margin-left: 5px;
+		}
+		.address h1{
+			font-size: 20px;
+			text-align: center;
+		}
+		.address a{
+			color: #333;
+			text-decoration: none;
+		}
+		.address p{
+			font-size: 12px;
+			text-align: center;
+			margin-top: 3px;
+			color: #929292;
+		}
+		.address h1:hover{
+			background-color: #fff;
+		}
+		.address h1:hover a{
+			color: #c00;
+		}
+		.address-right{
+			height: 50px;
+			width: 125px;
+			background-image: url("./image/15.gif");
+			background-repeat: no-repeat;
+		}
+		.address,.address-right{
+			float: left;
+		}
+		.address-right h1{
+			font-size: 20px;
+			color: #c00;
+			text-align: center;
+		}
+		.address-right p{
+			font-size: 12px;
+			text-align: center;
+			margin-top: 3px;
+			color: #929292;
+		}
+		.ad1{
+			width: 270px;
+			height: 230px;
+			margin-top: 10px;
+			border:1px solid #ddd;
+		}
+		.ad1 img{
+			margin:5px 5px 0 5px;
+		}
+		.ad2{
+			width: 270px;
+			height: 230px;
+			margin-top: 10px;
+			border:1px solid #ddd;
+			margin-left: 34px;
+		}
+		.ad2 img{
+			margin:5px 5px 0 5px;
+		}
+		.ad1,.ad2,.ad3,.d4{
+			float: left;
+		}
+		.ad3{
+			width: 270px;
+			height: 230px;
+			margin-top: 10px;
+			border:1px solid #ddd;
+			margin-left: 34px;
+		}
+		.ad3 img{
+			margin:5px 5px 0 5px;
+		}
+		.ad4{
+			width: 270px;
+			height: 230px;
+			margin-top: 10px;
+			border:1px solid #ddd;
+			margin-left: 33px;
+			float: left;
+		}
+		.ad4 img{
+			margin:5px 5px 0 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="top-left clearfix">
+			<ul>
+				<span><a href="#">全国</a><img src="../image/8.gif" alt=""></span>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">新房</a></li>
+				<li><a href="#">二手房</a></li>
+				<li><a href="#">租房</a></li>
+				<li><a href="#">查房价</a></li>
+				<li><a href="#">装修家居</a></li>
+				<li><a href="#">写字楼</a></li>
+				<li><a href="#">商铺</a></li>
+				<li><a href="#">业主论坛</a></li>
+				<li><a href="#">房产百科</a></li>
+				<li><a href="#">移动APP</a></li>
+				<li><a href="#">更多</a></li>
+			</ul>
+			<div class="img"></div>
+			<div class="register">
+				<p>注册</p>
+			</div>
+			<div class="line"></div>
+			<div class="entry">
+				<p>登录</p>
+			</div>
+			<div class="top-middle">
+				<p>订单</p>
+				<div class="order"></div>
+			</div>
+			<div class="top-right">
+				<p>看房</p>
+				<div class="look"></div>	
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="background-img">
+			<div class="background-middle">
+				<div class="background-content">
+					<div class="background-content-top">
+						<div class="logo">
+							<img src="./image/14.png" alt="">							
+						</div>
+						<div class="nationwide"><p>全国【</p><div class="city">切换城市</div><p>】</p></div>
+					</div>
+					<div class="character">
+						<ul>
+							<li><a href="#">查房价</a></li>
+							<li><a href="#">买新房</a></li>
+							<li><a href="#">买二手房</a></li>
+							<li><a href="#">找租房</a></li>
+							<li><a href="#">装修家园</a></li>
+							<li><a href="#">房产快讯</a></li>
+							<li><a href="#">海外房产</a></li>
+							<li><a href="#">地图找房</a></li>
+						</ul>
+						<span>更多</span><img src="./image/8.gif" alt="">
+						<input type="text" class="search" value="  请输入小区名称或地址，给自己的房子估个价">
+						<div class="search-img"></div>
+					</div>
+				</div>
+			</div>
+			<div>
+			  	<ul class="icon">
+        	  		<li class="selected"></li>
+		        	<li></li>
+		        	<li></li>
+		        	<li></li>
+		        	<li></li>
+        		</ul>
+        	</div>
+		</div>
+	</div>
+	<div class="buttom">
+		<div class="middle">
+			<div class="buy">
+				<p>买房</p>
+				<div class="new">
+					<ul>
+						<li class="n1"><a href="#">新房</a></li>
+						<li><a href="#">新房房源</a></li>
+						<li class="n2"><a href="#">二手房</a></li>
+						<li class="n3"><a href="#">业主论坛</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="sell">
+				<p>卖房</p>
+				<div class="new">
+					<ul>
+						<li class="n1"><a href="#">我要卖房</a></li>						
+						<li class="n2"><a href="#">查房价</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="rent">
+				<p>租房</p>
+				<div class="new">
+					<ul>
+						<li class="n1"><a href="#">找租房</a></li>
+						<li><a href="#">短租</a></li>
+						<li class="n2"><a href="#">我要出租</a></li>
+						<li class="n3"><a href="#">月付公寓</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="decoration">
+				<p>装修</p>
+				<div class="new">
+					<ul>
+						<li class="n1"><a href="#">装修案例</a></li>
+						<li><a href="#">我要装修</a></li>
+						<li class="n2"><a href="#">找装修公司</a></li>
+						<li class="n3"><a href="#">抢优惠</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="market">
+				<p>直销</p>
+				<div class="new">
+					<ul>
+						<li class="n1"><a href="#">新房直销</a></li>
+						<li><a href="#">二手房源</a></li>
+						<li class="n2"><a href="#">金融贷款</a></li>
+						<li class="n3"><a href="#">我要加盟</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="download"></div>
+	<div class="house">
+		<div class="title">
+			<div class="hot">
+				<h1>热销楼盘</h1>
+			</div>
+			<div class="brand">
+				<h1>品牌地产</h1>
+			</div>
+			<div class="good">
+				<h1>全城好房</h1>
+			</div>
+		</div>
+		<div class="ad1">
+			<img src="./image/3.jpg" alt="">
+			<div class="bar">
+				<div class="address">
+					<h1><a href="#">昌平</a></h1>
+					<p>北五环奥北别墅区</p>
+				</div>
+				<div class="address-right">
+					<h1>独栋别墅</h1>
+					<p>现房在售</p>
+				</div>
+			</div>
+		</div>
+		<div class="ad2">
+			<img src="./image/4.jpg" alt="">
+			<div class="bar">
+				<div class="address">
+					<h1><a href="#">丰台</a></h1>
+					<p>西四环边</p>
+				</div>
+				<div class="address-right">
+					<h1>改善之选</h1>
+					<p>科技大宅</p>
+				</div>
+			</div>
+		</div>
+		<div class="ad3">
+			<img src="./image/16.jpg" alt="">
+			<div class="bar">
+				<div class="address">
+					<h1><a href="#">朝阳公园</a></h1>
+					<p>品质二手房</p>
+				</div>
+				<div class="address-right">
+					<h1>500-800万</h1>
+					<p>共40条房源</p>
+				</div>
+			</div>
+		</div>
+		<div class="ad4">
+			<img src="./image/17.jpg" alt="">
+			<div class="bar">
+				<div class="address">
+					<h1><a href="#">红包等你来领</a></h1>
+					<p>全国25城联动</p>
+				</div>
+				<div class="address-right">
+					<h1>抽iPhone8</h1>
+					<p>赢10000元现金</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+			$function(){
+		    var nowIndex = $(".icon li.selected").index();
+            function goLeft(){
+            	if(nowIndex == 4) { nowIndex = -1; }
+                $(".icon li").eq(nowIndex+=1).addClass("selected").siblings().removeClass("selected");
+                $(".bar li").eq(nowIndex).fadeIn().siblings().fadeOut();
+            }          
+            function goRight(){
+            	if(nowIndex == 0) { nowIndex = 5; }
+               	$(".icon li").eq(nowIndex-=1).addClass("selected").siblings().removeClass("selected");
+              	$(".bar li").eq(nowIndex).stop(true,true).fadeIn().siblings().fadeOut();
+            }
+             $(".left").click(function(){
+             	  goLeft()
+             })
+             $(".right").click(function(){
+             	  goRight
+             })
+             function exportTimer(){
+             	timer = setInterval(function(){
+             		goLeft();	
+             	},2000);
+             }
+              //第一次执行定时器
+            exportTimer();
+
+            //左侧触碰停止及开始定时器
+            $(".left").hover(
+                function(){
+                    clearInterval(timer)
+                },
+                function(){
+                    exportTimer();
+                }
+            )
+
+            //右侧触碰停止及开始定时器
+            $(".right").hover(
+                function(){
+                    clearInterval(timer)
+                },
+                function(){
+                    exportTimer();
+                }
+            )
+        })
+	}
+	</script>	
+</body>
+</html>

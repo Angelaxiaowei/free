@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+    .text{
+    		width: 200px;
+            height: 200px;
+            background: red;
+            display: none;
+    }
+    .change-bg{
+       	background-color: yellow;
+       }
+       .fix{
+       	height: 100%;
+       	width: 100%;
+       	top: 0;
+       	position: fixed;
+       	background-color: rgba(0,0,0,0.3);
+       	display: none;
+       }
+       .fix button{
+       	   	float: right;
+       }
+       .change{
+       	   	float: right;
+       }
+       .mis{
+       	height: 100px;
+       	width: 200px;
+       	border:2px solid red;
+       	border-radius: 10%;
+       }
+    </style>
+</head>
+<body>
+    	<button class="show">show</button>
+    	<button class="hide">hide</button>
+    	<button class="toggle">toggle</button>
+    	<button class="slideDown">slideDown</button>
+    	<button class="slideUp">slideUp</button>
+    	<button class="change-bg-color">改变背景颜色</button>
+    	<button class="remove-bg-color">移除背景颜色</button>
+    	<button class="change">改变</button>
+    	<button class="mistake">错误</button>
+    	<div class="text">
+    	<div class="chang-bg"></div></div>
+    	<div class="fix">
+    	<button class="unchange">不改变</button></div>
+    	<div class="mis">崩溃了。。。</div>
+    	<script type="text/javascript">
+        $(function(){
+            $(".show").click(function(){
+            	$(".text").show();
+            })
+            $(".hide").click(function(){
+            	$(".text").hide();
+            })
+            $(".toggle").click(function(){
+            	$(".text").toggle();
+            })
+            $(".slideDown").click(function(){
+            	$(".text").slideDown();
+            })
+            $(".slideUp").click(function(){
+            	$(".text").slideUp();
+            })
+            $(".change-bg-color").click(function(){
+            	$(".text").addClass("change-bg")
+            })
+            $(".remove-bg-color").click(function(){
+            	$(".text").removeClass("change-bg")
+            })
+            $("button").click(function(){
+            	$("button").removeClass("change-bg");
+            	$(this).addClass("change-bg");
+            })
+            $(".change").click(function(){
+            	$(".fix").show();
+            })
+            $(".unchange").click(function(){
+            	$(".fix").hide();
+            })
+            $(".mistake").click(function(){
+            	$(".mis").show();
+            })
+            // $(this).addClass("change-bg").siblings().removeClass("change-bg");
+            
+
+		// <script type="text/javascript">
+		// $(function(){
+		// 	var asd=$(".left-item");
+		// 	asd.click(function(){
+		// 		alert("警告！！！！！");
+		// 	}) 
+		// })
+	    })
+		</script>
+</body>
+</html>

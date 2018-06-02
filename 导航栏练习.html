@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航栏</title>
+	<script src="../js/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+	html,body,a,ul,li{
+		margin: 0;
+		padding: 0;
+	}
+	a{
+        text-decoration: none;
+    }
+    ul li {
+        list-style: none;
+    }
+    .clearfix::after {
+          clear: both;
+          height: 0;
+          content: "";
+          display: block;
+     }
+	ul.bar{
+		width: 200px;
+		margin: 0 auto;
+	}
+	ul.bar li>a{
+		background-color: #555;
+	}
+	ul.bar li>a:hover{
+		background-color: #fff;
+	}
+	.child-bar{
+		display: none;
+	}
+	.child-bar li{
+		background-color: red;
+	}
+	.child-bar li:hover{
+		background-color:  #00b38a;
+	}
+	ul.bar li>a,.child-bar li{
+		 	width: 200px;
+            height: 30px;
+            text-decoration: none;
+            color: #000000;
+            line-height: 30px;
+            text-align: center;
+            display: block;
+	}
+	</style>
+</head>
+<body>
+	 	<ul class="bar">
+	 		<li>
+	 			<a href="javascript:void(0)">1</a>
+	 				<ul class="child-bar">
+                            <li>111</li>
+                            <li>111</li>
+                            <li>111</li>
+                            <li>111</li>
+                    </ul>
+	 		</li>
+	 		<li>
+	 			<a href="javascript:void(0)">2</a>
+	 				<ul class="child-bar">
+                            <li>222</li>
+                            <li>222</li>
+                            <li>222</li>
+                            <li>222</li>
+                     </ul>
+	 		</li>
+	 		<li>
+	 			<a href="javascript:void(0)">3</a>
+	 				<ul class="child-bar">
+                            <li>333</li>
+                            <li>333</li>
+                            <li>333</li>
+                            <li>333</li>
+                    </ul>
+	 		</li>		
+	 	</ul>
+	 </div>
+	 <script>
+      $(function(){
+      	// $("ul.bar li>a").click(function(){
+       //    $(".child-bar").hide();
+       //    $("this").siblings(".child-bar").show();
+       $(this).siblings().show().parent("li").siblings().children(".child-bar").hide();
+      	})
+     
+	 </script>
+</body>
+</html>

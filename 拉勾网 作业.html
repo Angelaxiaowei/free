@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拉勾网</title>
+	<script src="../js/jquery-3.2.0.min.js"></script>
+    <style type="text/css">
+      html,body,h1,a,ul,li,p{
+	      	margin:0;
+	      	padding:0; 
+      }
+      a{
+      	text-decoration: none;
+      }
+      ul{
+      	list-style: none;
+      }
+      .head{
+	      	background-color: #333;
+	      	width: 1349px;
+	      	height: 30px;
+      }
+      .head a{
+	      	text-decoration: none;
+	      	position: relative;
+	      	top: 5px;
+      }
+      .app {
+	      	color: #08d7a2;
+	      	background:url(./images/0495.png);
+	      	background-repeat: no-repeat;
+	      	padding:0 12px 0 27px;
+	      	float: left; 
+	      	left: 10px;
+      }
+      .app1{
+	      	color: #c4c3c3;
+		    float: left;
+		    line-height: 15px;
+		    padding: 2px 12px;
+      }
+      .deng a{
+	      	float: right;
+	      	text-decoration: none;
+	      	color: #c4c3c3;
+	      	line-height: 15px;
+	      	position: relative;
+	      	top: -22px;
+	      	right: 40px;
+	      	padding-left: 20px;
+      }
+      .logo{
+	      	height: 54px;
+		    border-top: 1px solid #d2d2d2;
+		    border-bottom: 1px solid #e5e5e5;
+		    background-color: #fafafa;
+      }
+      .logo img{
+	      	position: relative;
+	      	left: 80px;
+	      	top: 10px;
+      }
+      .logo strong{
+	      	position: relative;
+	      	left: 80px;
+	      	top: 5px;
+	      	color: #333;
+		    font-size: 18px;
+		    font-weight: 400;
+		    margin-right: 8px;
+      }
+      .logo a{
+	      	text-decoration: none;
+	      	color: #999;
+		    font-size: 12px;
+		    cursor: pointer;
+		    position: relative;;
+		    left: 70px;
+		    top: 5px;
+      }
+      .title li{
+	      	float: left;
+	      	display: block;
+		    font-size: 18px;
+		    color: #999;
+		    line-height: 51px;
+		    padding: 0 5px;
+	        position: relative;
+	        left: 350px;
+	        top: -35px;
+	        margin: 0 17px;
+      }
+      .title li:hover{
+	      	color: #000;
+	        border-bottom: 2px solid #00b38a;
+      }
+      .first{
+	      	width: 100%;
+	      	height:132px ;
+	      	background-color: #F2F5F4;    
+      }
+      .box{
+	      	width: 795px;
+	      	height: 46px;
+	      	background-color: #fff;
+	      	position: relative;
+	      	top: 30px;
+	      	left: 195px;
+      }
+      .box a{
+	      	font-size: 16px;
+	      	float: left;
+	      	width: 762px;
+		    height: 20px;
+		    line-height: 20px;
+		    position: relative;
+		    top: -22px;
+		    left: 18px;
+	        font-weight: bold;
+	        color: #999;
+      }
+      .first button{
+	      	position: relative;
+	      	right: 233px;
+	      	width: 142px;
+	      	height:46px;
+	      	background-color: #00b38a;
+	      	top: -17px;
+	      	float: right;
+	      	color: #fff;
+	      	font-size:18px;
+      }
+      h1{
+	      	font-size: 14px;
+	        color: #777;
+	        position: relative;
+	        right: 566px;
+	        top: 40px;
+      }
+      .tip a{
+	      	color: #00b38a;
+	      	position: relative;
+	      	left: 285px;
+	      	top: 23px;
+	      	font-size: 15px;
+	      	padding-left: 15px;
+      }
+      .tip a:hover{
+      	    text-decoration: underline;
+      }
+      .tip img{
+	        width: 28px;
+		    height: 28px;
+		    position: relative;
+		    right:50px;
+		    float:right; 
+		    top: -30px;
+	   }
+	   .tip span{
+		   	position: relative;
+		   	float: right;
+		   	right: -123px;
+		   	font-size: 13px;
+	   }
+	   h2{
+	        font-size: 18px;
+	        display: inline-block;
+		    padding-left: 15px;
+		    position: relative;
+		    top: 15px;
+		    left: 83px;
+		    font-weight: 500;
+	   }
+	   .middle{
+		   	position:relative;
+		   	width: 325px;
+		   	height: 
+	   }
+	   .middle a{
+	        color: #555;
+		    background-color: transparent;
+		    text-decoration: none;
+		    font-size: 16px;
+		    position: relative;
+		    left: 90px;
+		    top: 15px;
+		    padding-left: 10px;
+	   }
+	   .middle img{
+		   	position: absolute;
+		   	left: 420px;
+		   	top: 33px;
+	   }
+	   .picture img{
+		   	width: 840px;
+		   	height: 346px;
+		   	float: right;
+		   	position: relative;
+		   	left: -40px;
+		   	top: -335px;
+	   }
+	   .low a{
+		   	width: 1200px;
+		   	margin:0 auto;
+		   	height: 53px;
+		   	border-bottom:2px solid #E8E8E8;
+	   }
+	   .hot {
+		   	width: 1200px;
+		   	margin:0 auto;
+		   	height: 53px;
+		   	border-bottom:2px solid #E8E8E8;
+	   }
+	   .hot ul {
+	        height: 53px;
+	   }
+	   .hot li{
+		   	float: left;
+	      	display: block;
+		    font-size: 18px;
+		    line-height: 51px;
+		    padding: 0 25px;
+	        position: relative;
+	        color: rgb(51, 51, 51);
+		    background: rgb(255, 255, 255);
+			}
+		.hot ul li:hover{
+			border-bottom: 2px solid rgb(51, 51, 51);
+		}
+		.clearfix::after{
+			height: 0;
+			clear: both;
+			content: "";
+			display: block;
+		}
+		.diamond ul{
+			width: 1216px;
+			margin: 0 auto;
+		}
+		.diamond li{
+			width: 387px;
+			height: 198px;
+			margin:16px 16px 0 0;
+			float: left;
+			position: relative;
+            /*padding: 20px 18px 0;*/
+		    border: 1px solid #EAEEED;
+		    background-color: #fff;
+		}
+		.bottom ul{
+			width: 1216px;
+			margin: 0 auto;
+			height: 450px;
+		}
+		.bottom li{
+			width: 250px;
+			height: 198px;
+			margin:16px 16px 0 0;
+			float: left;
+			position: relative;
+            padding: 20px 18px 0;
+		    border: 1px solid #EAEEED;
+		    background-color: #fff;
+		}
+		.one{
+            color: #555;
+            background-color: transparent;
+            float: left;
+            position: relative;
+            top: 20px;
+            left: 15px;
+		}
+		.two{
+			color: #999;
+			float: left;
+			position: relative;
+			top: 20px;
+			left: 30px;
+			font-size: 13px;
+		} 
+		.diamond img{
+			float: left;
+			position: relative;
+			left: 36px;
+			top: 20px;
+		}
+		.bottom img{
+			float: left;
+			position: relative;
+			left: 36px;
+			top: 20px;
+		}
+		.three{
+			color:#fa6041 ;
+			font-size: 16px;
+			float: right;
+			position: relative;
+			top: 20px;
+			right: 20px;
+		}
+		.four{
+			color: #777;
+			float: left;
+			position: relative;
+			top: 30px;
+			right: 99px;
+			font-size: 14px;
+			width: 200px;
+		}
+		.diamond span{
+			position: relative;
+			float: left;
+			top: 60px;
+			left: -150px;
+			font-size: 13px;
+            color: #999;
+            border: 1px solid #F0F0F0;
+            margin-left: -32px;
+            padding: 2px 2px;
+		}
+		.bottom{
+			position: relative;
+            clear: both;
+		}
+		.bottom span{
+			position: relative;
+			float: left;
+			top: 60px;
+			left: -150px;
+			font-size: 13px;
+            color: #999;
+            border: 1px solid #F0F0F0;
+            margin-left: -32px;
+            padding: 2px 2px;
+            border-radius: 0.1%;
+		}
+		.diamond  {
+			position: relative;
+            clear: both;
+		}
+		.chong img{
+			float: left;
+			width: 40px;
+			height: 40px;
+			position: relative;
+			top: 88px;
+			left: 18px;
+		}
+		.seven{
+			float: left;
+			color: #555;
+			font-size: 14px;
+			position: relative;
+			top:90px;
+			left: 30px;
+		}
+		.six{
+			color: #999;
+			float: left;
+			position: relative;
+			top: 112px;
+			right: 26px;
+			font-size: 14px;
+		}
+		.content {
+			position: relative;
+			margin: 20px auto;
+			height: 357px;
+		}
+        .bit button{
+        	background-color: #fff;
+        	color: #00b38a;
+        	width: 387px;
+        	height: 42px;
+        	position: relative;
+        	left: 337px;
+        	top: 20px;
+        	border: 1px solid #00b38a;
+        	font-size: 16px;
+        	margin-bottom: 180px;
+        }
+        .bottom button{
+            background-color: #fff;
+        	color: #00b38a;
+        	width: 387px;
+        	height: 42px;
+        	position: relative;
+        	left: 337px;
+        	top: 20px;
+        	border: 1px solid #00b38a;
+        	font-size: 16px;
+        	margin-bottom: 180px;
+        }
+        .bit a{
+        	color: #333;
+            float: left;
+            position:relative;
+            left: 84px;
+            top: 135px; 
+            height: 30px;
+            border-bottom: 2px solid #333; 
+        }
+        .bit{
+        	width: 1200px;
+        	height: 167px;
+        	border-bottom:1px solid #E8E8E8;
+        }
+        .finally a{
+        	color: #333;
+            float: left;
+            position:relative;
+            left: 84px;
+            top: 135px; 
+            height: 30px;
+            border-bottom: 2px solid #333; 
+        }
+        .finally{
+        	width: 1200px;
+        	height: 300px;
+        	border-bottom:1px solid #E8E8E8;
+        }
+        .finally li{
+        	float: left;
+        	position: relative;
+        	top: 200px;
+        	padding-right: 20px;
+        	left: 20px;
+        	font-size: 13px;
+        	color: #555;
+        	font-weight: bold;
+        }
+        .finally li:hover{
+        	color: #00b38a;
+        	border-bottom: 1px solid #00b38a;
+        }
+        .foot img{
+        	float: left;
+        	position: relative;
+        	top: 16px;
+        	left: 185px;
+        }
+        .foot li{
+        	float: left;
+        	position: relative;
+        	top: 16px;
+        	left: 200px;
+        	padding-right: 16px;
+        	font-size:13px; 
+        	color: #555;
+        	font-weight: bold;
+        }
+        .foot a{
+        	float: left;
+        	font-size: 10px;
+        	color: #555;
+        	position: relative;
+        	top: 50px;
+        	right: 510px;
+        }
+    </style>
+</head>
+<body>
+	<div class="lg">
+		<div class="head">
+			<a href="#" class="app">拉钩App</a>
+			<a href="#" class="app1">进入企业版</a>
+		</div>
+		<div class="deng">
+			<a href="#">登录</a>
+			<a href="#">注册</a>
+		</div>
+	</div>
+	<div class="logo clearfix">
+		<img src="./images/763.png">
+		<strong>全国站</strong>
+		<a href="#">[切换城市]</a>
+		<div class="title">
+			<ul>
+				<li>首页</li>
+				<li>公司</li>
+				<li>校园</li>
+				<li>言职</li>
+				<li>大鲲</li>
+			</ul>
+		</div>
+	</div>
+	<div class="first">
+		<div class="box">
+			<a href="#">搜索职位,公司或地点</a>
+		</div>
+		<button>搜索</button>
+		<div class="tip">
+			<h1>热门搜索 :</h1>
+			<a href="#">java</a>
+			<a href="#">新媒体运营</a>
+			<a href="#">UI设计师</a>
+			<a href="#">PHP</a>
+			<a href="#">销售经理</a>
+			<a href="#">产品经理</a>
+			<a href="#">C++</a>
+			<a href="#">内容运营</a>
+			<a href="#">拉钩App</a>
+			<img src=".
+			/images/086.png">
+			<span>我要反馈</span>
+		</div>
+	</div>
+	<div class="content clearfix">
+		<div class="middle-box">
+			<div class="middle">
+				<h2>技术</h2>
+				<a href="#">java</a>
+				<a href="#">PHP</a>
+				<a href="#">c++</a>
+				<a href="#">Android</a>
+				<img src="./images/589.png">
+			</div>
+			<div class="middle">
+				<h2>产品</h2>
+				<a href="#">产品总监</a>
+				<a href="#">产品经理</a>
+				<img src="./images/589.png">
+			</div>
+			<div class="middle">
+				<h2>设计</h2>
+				<a href="#">UI设计师</a>
+				<a href="#">交互设计</a>
+				<a href="#">网页设计师</a>
+				<img src="./images/589.png">
+			</div>
+			<div class="middle">
+				<h2>运营</h2>
+				<a href="#">新媒体运营</a>
+				<a href="#">编辑</a>
+				<a href="#">数据运营</a>
+				<img src="./images/589.png">
+			</div>
+			<div class="middle">
+				<h2>运营</h2>
+				<a href="#">市场与销售</a>
+				<a href="#">市场推广</a>
+				<a href="#">市场总监</a>
+				<img src="./images/589.png">
+			</div>
+			<div class="middle">
+				<h2>职能</h2>
+				<a href="#">HR</a>
+				<a href="#">行政</a>
+				<a href="#">财务</a>
+				<a href="#">审计</a>
+				<img src="./images/589.png">
+			</div>
+			<div class="middle">
+				<h2>金融</h2>
+				<a href="#">投资</a>
+				<a href="#">融资</a>
+				<a href="#">并购</a>
+				<a href="#">风控</a>
+				<img src="./images/589.png">
+			</div>
+		</div>
+<!-- 		<div class="picture">
+		    <img src="../images/poi.jpg">
+		</div> -->
+	</div>
+	<div class="hot">
+		<ul class="clearfix">
+			<li class="line">热门职位</li>
+			<li>最新职位</li>
+		</ul>
+	</div>
+	<div class="diamond">
+	    <div class="why">
+			<ul class="clearfix">
+				<li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+		 	</ul>
+		</div>
+		<div class="bit">
+			    <button>查看更多</button>
+			    <a href="#">热门公司</a>
+		</div>
+	</div>
+	<div class="bottom">
+		<ul class="clearfix">
+				<li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a>
+					<span>架构师</span> -->
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <li>
+					<a href="#" class="one">大数据平台开发</a>
+					<a href="#" class="two">[3天前发布]</a>
+					<img src="./images/651.png">
+					<!-- <a href="#" class="three">7k-14k</a>
+					<a href="#" class="four">经验1-3年/本科</a> -->
+					<span>架构师</span>
+					<span>hadoop</span>
+					<span>数据分析</span>
+					<div class="chong">
+						<img src="./images/cq.png">
+						<a href="#" class="seven">重庆移动</a>
+						<a href="#" class="six">移动互联网/不需要融资/重庆</a>
+					</div>
+			    </li>
+			    <button>查看更多</button>
+		</ul>
+	</div>
+	<div class="finally">
+		<a href="#">友情链接</a>
+		<ul>
+			<li>拉勾网</li>
+			<li>大锟</li>
+			<li>招聘</li>
+			<li>app下载</li>
+			<li>拉钩云</li>
+			<li>中大网校</li>
+			<li>人人都是产品经理</li>
+			<li>教师招聘</li>
+			<li>新疆人才网</li>
+			<li>研究报告</li>
+			<li>互联网的一些事</li>
+			<li>人才招聘网</li>
+			<li>找工作</li>
+			<li>字典</li>
+		</ul>
+	</div>
+	<div class="foot">
+		<img src="./images/ebc.png">
+		<ul>
+			<li>拉勾app</li>
+			<li>拉钩微博</li>
+			<li>拉钩微信</li>
+			<li>拉钩小程序</li>
+			<li>帮助中心</li>
+			<li>联系我们</li>
+			<li>招聘解决方案</li>
+			<li>服务热线：4006-2828-35（9：00-18:00）</li>
+		</ul>
+		<a href="#">©2017 Lagou 京ICP备14023790号-2 京公网安备 11010802024043号</a>
+	</div>
+	<script type="text/javascript">
+        $(function(){
+            $(".middle").click(function(){
+            	$(".text").show();
+            })
+</body>
+</html>

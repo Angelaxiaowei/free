@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课堂练习</title>
+    <script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+    <style>
+        html,body,ul,li {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .tab{
+        	width: 600px;
+        	margin: 0 auto;
+        	border: 1px solid red;
+        }
+        .clearfix::after{
+        	clear: both;
+        	content: "";
+        	height: 0;
+        	display: block;
+        }
+        .tab ul li{
+        	width: 200px;
+        	float: left;
+        	text-align: center;
+        	background-color: green;
+        }
+        .tab ul li.selected{
+        	background-color: yellow;
+        }
+        .tab-box .box{
+         width: 600px;
+         height: 400px;
+         line-height: 400px;
+         text-align: center;
+        }
+        .hide{
+        display: none;
+        }
+        .show{
+        display: block;
+        }
+        /*.bar {
+            width: 100%;
+            height: 50px;
+            background-image: url("./images/newgif.gif");
+            background-position: 0 -666px;
+        }
+        .center-bar {
+            width: 1200px;
+            margin: 0 auto;
+            height: 50px;
+        }
+        .clearfix::after {
+            clear: both;
+            height: 0;
+            content: "";
+            display: block;
+        }
+        .center-bar>ul>li {
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            padding: 0 15px;
+        }
+        .child-bar {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            z-index: 2;
+            display: none;
+            background: #fff;
+        }
+        .child-bar li {
+            width: 120px;
+            text-align: left;
+            padding: 10px 0 10px 10px;
+            line-height: 1;
+        }
+        .center-bar>ul>li:hover {
+            background: #b30000;
+        }
+        .center-bar>ul>li:hover .child-bar {
+            display: block;
+        }
+        .head-img {
+            position: relative;
+            width: 100%;
+            height: 464px;
+            overflow: hidden;
+        }
+        .head-img img {
+            height: 464px;
+            width: 2000px;
+            position: absolute;
+            left: 50%;
+            margin-left: -1000px;
+            z-index: 1;
+        }
+        .tip-div {
+            position: absolute;
+            top: 0;
+            width: 720px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -360px;
+            background: rgba(0,0,0,0.6);
+            z-index: 3;
+            box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.6);
+        }*/
+    </style>
+</head>
+<body>
+    <div class="tab">
+    <ul class="bar clearfix">
+	       <li class="selected">1</li>
+	       <li>2</li>
+	       <li>3</li>
+    </ul>
+    	<div class="tab-box">
+    		<div class="box">1</div>
+    		<div class="box hide">2</div>
+    		<div class="box hide">3</div>
+    	</div>
+    </div>
+    <script>
+      $(function(){
+      	$(".bar li").click(function(){
+      		$(this).addClass("selected").siblings().removeClass("selected");
+      		// var index=$(".bar li");
+      		// console.log(allLi.eq(2));
+      	})
+      })
+    </script>
+   <!--  <div class="content"></div>
+    <div class="bottom"></div> -->
+</body>
+</html>

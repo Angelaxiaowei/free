@@ -1,0 +1,172 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>糗事百科 new</title>
+		<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+		<style type="text/css">
+		html,body,ul,li,a{
+            margin: 0;
+			padding: 0;
+		}
+		ul {
+            list-style: none;
+        }
+		html,body {
+            background-color: #f7f7f7;
+        }
+        a {
+            text-decoration: none;
+        }
+        .clearfix::after{
+        	display: block;
+            height: 0;
+        	content: "";
+        	clear: both;
+        }
+		.head{
+			height: 82px;
+			line-height: 82px;
+			background-color: #ffd52b;
+		}
+		.head-content{
+			width: 960px;
+			margin: 0 auto;
+		}
+		.head-content ul{
+			float: left;
+		}
+		.head-content ul li{
+           float: left;
+           height: 82px;
+           line-height:82px;
+           padding: 0 14px;
+           margin: 0 1px;
+		}
+		.head-content ul li a {
+            color: #7a4624;
+        }
+        .head-content ul li:hover {
+            background: #ffe36f;
+        }
+		.head-content img {
+            float: left;
+        }
+        .head-content span {
+            float: right;
+            color: #7a4624;
+        }
+        .head-content ul li.selected {
+            height: 78px;
+            line-height: 78px;
+            border-bottom: 4px solid #7a4624;
+            background-color: #ffe36f;
+        }
+        .content{
+        	width: 960px;
+        	margin: 16px auto 0 auto;
+        }
+        .content-left, .content-right{
+        	float: left;
+        } 
+        .content-left{
+        	width: 640px;
+            margin-right:16px; 
+        }
+        .left-item{
+        	background: #fff;
+            margin-bottom: 16px;
+            padding: 18px 20px;
+        }
+        .user .icon{
+        	width: 35px;
+        	height: 35px;
+        	border-radius: 100%;
+        }
+        .user .name{
+        	color: #9b8878;
+        	position:relative;
+        	top: -10px;
+            margin-left: 8px;
+        }
+        .user .age {
+        	background-image: url("./images/789.png");
+        	width: 22px;
+            height: 16px;
+            position: relative;
+            display: inline-block;
+            padding-left: 12px;
+            background-size: 100% 100%;
+            vertical-align: 8px;
+            margin-left: 10px;
+        }
+        .age span {
+            position: absolute;
+            right: 5px;
+            font-size: 9px;
+            color: #fff;
+        }
+        .left-item .news{
+        	font-size: 16px;
+    		line-height: 1.8;
+    		color: #333;
+        }
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<div class="head-content">
+				<img src="./images/logo2016.png">
+				<ul class="clearfix">
+					<li class="selected"><a href="">热门</a></li>
+					<li><a href="">24小时</a></li>
+	           		<li><a href="">热图</a></li>
+	           		<li><a href="">文字</a></li>
+	           		<li><a href="">穿越</a></li>
+	           		<li><a href="">糗图</a></li>
+	           		<li><a href="">新鲜</a></li>
+	           		<li><a href="">投稿</a></li>
+				</ul>
+				<span>登录</span>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-left">
+			<div class="left-item">
+				<p class="user"><img class="icon" src="./images/200.png"><span class="name">暖男四大爷</span><span class="age"><span>30</span></p>
+				<p class="news">有位同事曾出过严重的车祸，先被迎面开来的车撞飞，飞到马路另一侧又被迎面飞驰的车撞飞，落在人行道的一美女脚下，但他还是被抢救过来了，现在与常人无异，聊天时有人问起他车祸时的感觉，他说:"第一次被撞飞，感觉自己就象一皮球，被撞第二次，就想知道自己到底能被撞几次，落到地上看见自己头顶有一把奇怪布伞罩着，这布伞有两根雪白的伞柄。也许是这把怪伞救了我!"大家听了呵呵笑起来，纷纷说:"你是飞到人家姑娘裙底下了!"</p>
+			</div>
+			<div class="left-item">
+				<p class="user"><img class="icon" src="./images/000.png"><span class="name">昵称长了真的好么</span><span class="age"><span>26</span></p>
+				<p class="news">隔壁一对二婚夫妻天天吵架，刚刚又在吵， 我默默地把音响开到最大，放了一首勉为其难。。完了听见还在吵，我接着放了一首分手快乐。不一会 果然不吵了，这时候我家传来敲门声。。
+				那么请问，我开门需要带刀么？？</p>
+			</div>
+			<div class="left-item">
+				<p class="user"><img class="icon" src="./images/hhh.png"><span class="name">葬心葬爱葬礼</span><span class="age"><span>35</span></p>
+				<p class="news">去年秋天发生的事情。天气越来越凉，早晚都需要加个外套。早上出门比较早，所以穿了个外套，但是到白天就热了，中午下班回家，到车库取车，台铃车座是可以用遥控打开的，手放在口袋里打开了车座，然后把衣服脱下来，放在了车座里。行云流水般锁住了车座。然后准备开车回家。。。。。突然发现车骑不了了。钥匙在衣服里，衣服在车座下。。。好吧，去找车库管理借螺丝刀拆车座。。。。感觉自己的脑子短路了。</p>
+			</div>
+			<div class="left-item">
+				<p class="user"><img class="icon" src="./images/image.jpg"><span class="name">五戒行者</span><span class="age"><span>27</span></p>
+				<p class="news">感觉自己就是贱！
+				就这样吧！不想折腾了！
+				在一个酒店，碰都不让碰，那来干嘛？就是来诱惑我啊！搞笑呢！不折腾了！就这样吧！</p>
+			</div>
+			</div>
+			<div class="content-right">
+				<div class="right-picture">
+					<img class="right-picture1" src="./images/inform.png">
+				</div>
+				
+			</div>
+
+		</div>
+		<script type="text/javascript">
+		$(funtion(){
+			var leftItem=$(".left-item");
+			leftItem.click(funtion({
+				alert(123123);
+			}) 
+		})
+		</script>
+	</body>
+	</html>

@@ -1,0 +1,146 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.0.min.js"></script>
+		<title>拉勾网登录</title>
+		<style type="text/css">
+		html,body,a,p,h1,h2{
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix{
+			content: "";
+			display: block;
+			height: 0;
+			clear: both;
+		}
+		.behind{
+			background-color: #00b38a;
+			width: 100%;
+			height: 360px;
+			position: relative;
+		}
+		.logo {
+			float: left;
+			margin-left:300px; 
+			margin-top:70px; 
+		}
+		.logo img{
+			width: 112px;
+			height: 42px;
+		}
+		.box{
+			width: 552px;
+			position: relative;
+		    margin:-200px auto;
+		    background-color:#fff;
+		    padding: 62px 70px 68px 78px;;
+		    display: table;
+		    border-radius: 2px;
+		    border: 1px solid #dce1e6;
+		    z-index: 2;
+		    height: 400px;
+		}
+		.box a{
+			text-decoration: none;
+			color: #555;
+			font-size: 16px;
+			line-height: 24px;
+			position: relative;
+			float: left;
+            height: 33px;
+            width: 145px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 20px;
+		}
+		.box a:hover{
+			color: #00b38a;
+		}
+        .box p{
+            position: relative;
+            margin: 18px;
+            width: 290px;
+            border-radius: 0;
+            padding: 5px;
+        }
+        input{
+        	width: 290px;
+        	height: 44px;
+        	font-size: 14px;
+        	color: #ededed;
+        	position: relative;
+        	line-height: 1;
+        	border-width: 1px;
+            border-style: solid;
+        }
+        h1{
+        	font-size: 13px;
+        	color: #00b38a;
+        	margin-left: 230px;        }
+        h2 button{
+        	width: 290px;
+        	height: 46px;
+        	background-color:#00b38a;
+        	font-size: 20px;
+        	color: #fff;
+        	padding: 5px; 
+        }
+        .right a{
+        	text-decoration: none;
+        	color: #000;
+        	font-size:14px;
+        	float: right;
+        	position: relative;
+        	bottom: 200px;
+        	color: #555;
+        }
+        .input-tips{
+        	position: relative;
+        	display: block;
+        	z-index: 2;
+        	margin-top: 5px;
+        	line-height: 18px;
+        	font-size: 12px;
+        	padding-left: 20px;
+        	color: #fd5f39;
+        	background-size: 14px;
+        	background:url(../images/info.png); 
+        }
+		</style>
+	</head>
+	<body>
+	    <div class="top">
+			<div class="behind">
+				<div class="logo">
+					<a href="#"><img src="../image/logo.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="box">
+		         <a href="#">密码登录</a>
+		         <a href="#">验证码登录</a>
+		         <p><input type="text" class="input input_white"  id name placeholder="请输入常用手机号/邮箱" data-required="required" autocomplete="off"> </p>
+				 <p><input type="password"  class="input input_white"  id name placeholder="请输入密码" data-required="required" autocomplete="off" ></p>
+				 <!-- <span data-valid-message class=/"input-tips">请输入已验证手机/邮箱"</span> -->
+				 <h1>忘记密码？</h1>
+				 <h2><button>登录</button></h2>
+				  	<div class="right clearfix">
+		    		<a href="#">还没有账号：</a>
+		    		</div>
+		    		
+		    </div>
+		</div>
+		<script type="text/javascript">
+         // $(function(){
+         //   var goBackHtml=$("")
+         // //    $("button").click(function(){
+         // //        // var input input_white = "quxiaowei";
+         // //        // var input input_white = "123456";
+
+         // // })
+		</script>
+	</body>
+	</html>

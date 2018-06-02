@@ -1,0 +1,16 @@
+1 git clone xxxxxxx.git
+2 git status查看状态
+     touch w3c.html
+      git add . 暂存
+3 git commit -m "新建w3c文件"   做了什么
+                 git config --global user.email "965661503@qq.com"
+                 git config --global user.name “Your Name”
+4  git push origin master 推送位置
+rm -rf a.txt
+
+ git pull
+ git checkout -b dev
+ git branch
+ git merge dev
+ 
+

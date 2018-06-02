@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+    <title>Document</title>
+    <style media="screen">
+      ul,li {
+        list-style: none;
+      }
+    </style>
+</head>
+<body>
+    <div id="component">
+        <button type="button" @click="addNew()">最下面增加一条</button>
+        <button type="button" @click="popNew()">删除最下面一条</button>
+        <button type="button" @click="unshiftNew()">最上面增加一条</button>
+        <button type="button" @click="deleteTop()">删除上面第一条</button>
+        <button type="button" @click="reverse()">反转</button>
+        <button type="button" @click="addmore()">增加多条</button>
+        <button type="button" @click="deletemore()">删除多条</button>
+        <ul>
+          <li v-for="item in list"><span>{{ item.title }}</span> <span>-</span><span>{{ item.content }}</span> <button type="button" @click="deleteNow(item)">删除</button> <button type="button" @click="bianji(item)">编辑</button></li>
+        </ul>
+        题目：<input class="title">
+        内容：<input class="content">
+    </div>
+    <script>
+        var List = new Vue({
+          el:"#component",
+          data: {
+            list: [
+              {
+                "title":"111",
+                "content":"1111111"
+              },
+              {
+                "title":"222",
+                "content":"2222222"
+              },
+              {
+                "title":"333",
+                "content":"3333333"
+              },
+              {
+                "title":"444",
+                "content":"4444444"
+              },
+            ],
+            a:"hahahhahah",
+          },
+          methods: {
+            //最下面新增一条
+            addNew: function(){
+              var newItem = {
+                "title":"你好",
+                "content":"你好你好你好你好",
+              };
+              this.list.push(newItem);
+            },
+            //删除上面第一条
+            deleteTop:function(){
+              this.list.shift();
+            },
+            //点击每一个后面的删除进行删除
+            deleteNow:function(item){
+             var that = this; 
+             that.list.forEach(function(nowitem,index){
+                  if (nowitem == item) {that.list.splice(index,1)};
+             })
+            },
+            //反转
+            reverse:function(){
+               this.list.reverse();
+            },
+            //删除最下面一条
+            popNew:function(){
+              this.list.pop();
+            },
+            //最上面增加一条
+            unshiftNew:function(){
+              var firstItem = {
+                "title":"qqqqqqq",
+                "content":"aaaaaaaa",
+              };
+              this.list.unshift(firstItem);
+            },  
+            //增加多条
+            addmore:function(){
+                var moreItem = [{
+                "title":"rrrrrrr",
+                "content":"ttttttt",
+              },
+              {
+                "title":"vvvvvvv",
+                "content":"nnnnnn",
+              }
+              ];
+              var b=this.list.concat(moreItem);
+              this.list = b;
+            },
+            //删除多个
+             deletemore:function(){
+              this.list.splice(0,2);
+            },
+            //编辑
+            bianji:function(item){
+              var title = $(".title").val();
+              var content = $(".content").val();
+              if(title != ""&& content != ""){
+                item.title=title;
+                item.content=content;
+                $(".title").val("");   //编辑之后清空文本框
+                $(".content").val(""); //编辑之后清空文本框
+              }
+              else{
+                alert("此处不能为空！！！！！");
+              }
+            }
+          }
+        })
+    </script>
+</body>
+</html>

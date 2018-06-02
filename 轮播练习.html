@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <style>
+        ul,li {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+        	list-style: none;
+        }
+        .clearfix::after {
+            clear: both;
+            display: block;
+            content: "";
+            height: 0;
+        }
+        .bar  {
+            list-style: none;
+          /*  width: 1500px;
+            margin-left: -300px;*/
+        }
+        .bar>li, .bar>li>img {
+            width: 300px;
+            height: 300px;
+        }
+        .bar>li {
+            float: left;
+            line-height: 300px;
+            text-align: center;
+            position: absolute;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .left {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .bar ul li img{
+          width: 300px;
+          height: 300px;
+          float: left;
+        }
+        .icon{
+	        position: absolute;
+	        bottom: 0;
+	        left: 0;
+	        left: 50px;	
+        }
+        .icon li{
+        	float: left;
+        	width: 10px;
+        	height: 10px;
+        	background-color: #000;
+        	margin: 0 10px;
+        }
+        .icon li.selected{
+        	background-color: red;
+        }
+        .hide{
+        	display: none;
+        }
+    </style>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <ul class="bar clearfix">
+            <li><img src="../images/o.png"></li>
+            <li class="hide"><img src="../images/e.jpg"></li>
+            <li class="hide"><img src="../images/u.jpg"></li>
+            <li class="hide"><img src="../images/m.png"></li>
+            <li class="hide"><img src="../images/p.jpg"></li>
+        </ul>
+        <ul class="icon">
+        	<li class="selected"></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        </ul>
+        <button class="left">向左移动</button>
+        <button class="right">向右移动</button>
+    </div>
+    <script>
+        $(function(){
+            var nowIndex = $(".icon li.selected").index();
+            function goLeft(){
+            	if(nowIndex == 4) { nowIndex = -1; }
+                $(".icon li").eq(nowIndex+=1).addClass("selected").siblings().removeClass("selected");
+                $(".bar li").eq(nowIndex).fadeIn().siblings().fadeOut();
+            }          
+            function goRight(){
+            	if(nowIndex == 0) { nowIndex = 5; }
+               	$(".icon li").eq(nowIndex-=1).addClass("selected").siblings().removeClass("selected");
+              	$(".bar li").eq(nowIndex).stop(true,true).fadeIn().siblings().fadeOut();
+            }
+             $(".left").click(function(){
+             	  goLeft()
+             })
+             $(".right").click(function(){
+             	  goRight
+             })
+             function exportTimer(){
+             	timer = setInterval(function(){
+             		goLeft();	
+             	},2000);
+             }
+              //第一次执行定时器
+            exportTimer();
+
+            //左侧触碰停止及开始定时器
+            $(".left").hover(
+                function(){
+                    clearInterval(timer)
+                },
+                function(){
+                    exportTimer();
+                }
+            )
+
+            //右侧触碰停止及开始定时器
+            $(".right").hover(
+                function(){
+                    clearInterval(timer)
+                },
+                function(){
+                    exportTimer();
+                }
+            )
+        })
+            //     $("ul").stop(true,true).animate({
+            //         marginLeft: "-=300px",
+            //     },500,function(){
+            //         var first = $("li").first();
+            //         var last = $("li").last();
+            //         first.insertAfter(last);
+            //         $("ul").css("margin-left","-300px")
+            //     })
+            // })
+            //     $("ul").stop(true,true).animate({
+            //         marginLeft: "+=300px",
+            //     },500,function(){
+            //         var first = $("li").first();
+            //         var last = $("li").last();
+            //         last.insertBefore(first);
+            //         $("ul").css("margin-left","-300px")
+            //   })
+    </script>
+</body>
+</html>

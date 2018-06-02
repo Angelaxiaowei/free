@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>糗事百科</title>
+	<style type="text/css">
+	html,body,ul,li,h1,h2,h3,h4,h5,a,p{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #f7f7f7;
+		}
+		.content{
+			width:1000px;
+			margin: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		.top{
+			background-color: #ffd52b; 
+			width: 100%;
+			height: 82px;
+		}
+		.top img{
+			float: left;
+		}
+		.logo{
+			float: left;
+			margin-left: 195px;
+		}
+		
+		.bar{
+    		list-style: none;
+    		background-color: #ffd52b; 
+    		float:left;
+
+    	}
+    	.bar li{
+    		float:left;
+    	}
+    	.bar li a {
+    		float:  left;
+    		padding: 30px 14px;
+    		text-align: center;
+    		display: block;
+    		font-size: 16.5px;
+    		color: #7a4624;
+    		border-bottom: 4px solid #ffd52b;
+    	} 
+    	.small a{
+    		font-size: 16.5px;
+    		color: #7a4624;
+    		display: block;
+            float: left;
+			padding: 29px 0;
+			position: absolute;
+			right: 198px
+    	}
+    	.bar a:hover {
+    		background-color:#ffe36f;
+    		color: #7a4624;
+    		border-bottom-color: #7a4624;
+    	}
+    	.clearfix::after {
+    		display: block;
+    		content: "";
+    		clear: both;
+    		height: 0;
+    	}
+    	/*.last{
+			list-style: none;
+			float: left;
+			background-color: #ffd52b;
+			width: 334px;
+    		height:36px; 
+		}
+		.last li{
+			float:left;
+		}
+		.last li a {
+    		float:  left;
+    		padding: 30px 14px;
+    		text-align: center;
+    		display: block;
+    		font-size: 16.5px;
+    		color: #7a4624;
+    		border-bottom: 4px solid #ffd52b;
+    	} */
+    	.left>div{
+			width: 610px;
+			background-color: #fff;
+			margin: 20px 10px;
+			
+    	}
+    	.picture {
+    		width: 35px;
+    		border-radius: 50%;
+    		float: left;
+
+    	}
+    	h1{
+    		display: block;
+    		font-size: 12px;
+    		font-weight: 400;
+    		margin: 10px 0 0 10px;
+    		float: left;
+    		color: gray;
+    	}
+    	h1:hover{
+            color: #300;
+    	}
+    	.comment h2 {
+    		float: left;
+    		font-size: 10px;
+			color: #999;
+			margin:20px 5px;
+    	}
+    	.comment a{
+    		color: #999;
+    	}
+    	.comment a:hover{
+    		color: #300;    	
+    	}
+    	h4{
+          background-image: url(./images/789.png);
+          width: 22px;
+    	  height: 16px;
+    	  float: left;
+          line-height: 16px;
+          font-size: 9px;
+          text-align: center;
+          padding-left: 12px;
+          margin-top: 10px;
+          margin-left: 8px;
+          color: #fff;
+          background-size: cover;
+    	}
+    	.first p, .second p{
+            margin:10px auto;
+			float: left;
+			color: #333;
+			font-weight: 300px;
+    	}
+		.face{
+			float: left;
+			margin-top: 56px;
+			margin-left: -75px;
+		}
+		.second ,.share .share-wechat {
+    		background-position: 0 -79px;
+    	}
+		.share{
+			display: inline-block;
+    		width: 24px;
+    		height: 24px;
+    		margin-left: 10px;
+    		text-indent: -9999px;
+    		background-image: url(./images/icongroup.png);
+    		background-repeat: no-repeat;
+    		cursor: pointer;
+    		float: right;
+		}
+		.right-picture{
+			float: right;
+		}
+		.right-picture1{
+			width: 300px;
+			height: 70px;
+			margin-bottom: 5px;
+			margin-top: 20px;
+		}
+		.right-picture2{
+			width: 300px;
+			height: 250px;
+			margin-top:10px; 
+			margin-bottom: 10px;
+		}
+		.right-picture3{
+			width: 141px;
+			height: 100px;
+		}
+		.right-picture4{
+			width: 91px;
+			height: 24px;
+			margin-top: 10px;
+		}
+		.left,.right{
+			float: left;
+		}
+		.left{
+			width:640px;
+		}
+		.right{
+			width:300px;
+		}
+		.right a{
+			width: 120px;
+			height: 24px;
+			color:  gray;
+			font-size: 12px;
+			margin:10px; 
+		}
+		.bottom-picture1{
+			float: left;
+			width:820px;
+			height:100px;
+			margin:0 auto;
+		}
+		.foot{
+			float: left;
+			width: 1300px;
+			height: 24px;
+		}
+		.foot li{
+	    	float:  left;
+	    	font-size: 18px;
+	    	list-style: none;
+	    	text-align:  center;
+    	} 
+    	.foot li a{
+    		color: black;
+    	}
+    	.bottom{
+    		float: left;
+			width: 100%;
+    	}
+    	.bottom>div{
+    		margin:0 auto;
+    		width: 980px; 
+    	}
+    	.bottom li{
+	    	float:  left;
+	    	font-size: 14px;
+	    	list-style: none;
+	    	margin:5px 65px;
+	    	text-align:  center;
+	    }    	
+    	.bottom li a{
+    		color: #666;
+    	}
+    	.bottom a:hover{
+    		background-color:#9b8878;
+    	}
+    	h5{
+    		float: left;
+    		display: inline-block;
+    		margin:3px;
+    		padding: 5px;
+    		font-size: 12px;
+    		color: black;
+    	}
+    	.finally{
+    		margin: 40px;
+    	}
+    </style>
+</head>
+<body>
+    <div class="top">
+            <img class="logo" src="./images/logo2016.png">
+            <ul class="bar clearfix">
+	           <li><a href="#">热门</a></li>
+	           <li><a href="#">24小时</a></li>
+	           <li><a href="#">热图</a></li>
+	           <li><a href="#">文字</a></li>
+	           <li><a href="#">穿越</a></li>
+	           <li><a href="#">糗图</a></li>
+	           <li><a href="#">新鲜</a></li>
+	           <li><a href="#">投稿</a></li>
+	        </ul>
+            <div class="small"><a href="#">登录</a></div>     	
+    </div>
+	<div class="content clearfix">
+		<div class="left clearfix">
+			<div>
+	 			<img class="picture" src="./images/anony.png">
+	 			<h1>匿名用户</h1>
+	 			<h4>19</h4>
+	 			<div class="first clearfix">
+	 				<a href="#"><p>一个做工程监理的朋友，刚开始做监理员时到处巡视，工程队的人看到就上根烟，来者不拒，给的多了就用烟盒储存起来回家抽，所以几乎不用买烟抽。
+	 				</p></a>
+	 				<a href="#"><p>过了半年考了监理工程师证，在工地上上根香烟就开始拒绝了，要给就是一包，一根烟多没意思。
+	 				</p></a>
+	 				<a href="#"><p>一年后他做了总监代表权利大了一些，很多东西都需要他签字，人家都心里明白，香烟就是成条的了，外出喝酒，唱歌，洗澡，泡脚也就跟上了。
+	 				</p></a>
+	 				<a href="#"><p>又过了一年，他考取了总监理工程师证，我说你这下厉害了，送烟请酒的要排队了吧。他嘿嘿一笑摆摆手说: … 
+	 				</p></a>
+	 				<div class="comment">
+						<h2>522好笑 · <a href="#">19 评论</a></h2>
+						<div class="face ">
+							<a href="#"><img src="./images/funny.png" alt=""></a>
+							<a href="#"><img src="./images/not_funny.png" alt=""></a>
+							<a href="#"><img src="./images/comment.png" alt=""></a>
+
+				        </div>	
+					</div>
+	 			</div>
+	 		</div>
+	 		<div>
+	 			<img class="picture" src="./images/000.png">
+	 			<h1>星空下的凯撒</h1>
+	 			<h4>18</h4>
+	 			<div class="second clearfix">
+	 				<a href="#"><p>高一的某一天下午，班主任不值班，下午全副科，就和同桌翻墙出去玩，回来的时候</p></a>
+	 				<a href="#"><p>让门卫拦着了</p></a>
+	 				<a href="#"><p>你俩干啥的，哪个学校的</p></a>
+	 				<a href="#"><p>我:大爷，别误会，我俩都本校的，就刚才出去一趟，您帮个忙，让我俩进去</p></a>
+	 				<a href="#"><p>大爷:你俩叫啥，哪个班的</p></a>
+	 				<a href="#"><p>我同桌说:我叫韩煜，高一8班的</p></a>
+	 				<a href="#"><p>我脑子一转说道:我叫苏洵，我俩一个班的</p></a>
+	 				<a href="#"><p>大爷看我俩哼哈一声，好两个唐宋八大家啊，今天不把你俩的平生所著的诗词背出</p>
+	 				</a>
+	 				<a href="#"><p>来，别想进去………</p></a>
+	 				<div class="comment">
+						<h2>407好笑 · <a href="#">19 评论</a></h2>
+						<div class="face ">
+							<a href="#"><img src="./images/funny.png" alt=""></a>
+							<a href="#"><img src="./images/not_funny.png" alt=""></a>
+							<a href="#"><img src="./images/comment.png" alt=""></a>
+				        </div>	
+						<div class="share">
+							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">微信</a>
+							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">QQ</a>
+							<a class="share-qzone" data-type="qznoe" title="分享到QQ空间" rel="nofollow">QQ空间</a>
+							<a class="share-webo" data-type="webo" title="分享到微博" rel="nofollow">微博</a>
+						</div>
+					</div>
+				</div>		
+	 		</div>
+	 		<div>
+	 			<img class="picture" src="./images/200.png">
+	 			<h1>莫纳的世界</h1>
+	 			<h4>24</h4>
+	 			<div class="second clearfix">
+	 				<a href="#"><p>给幼儿班的儿子报了武术兴趣班，我说:“回来也教教妈妈吧！”“不行！”“为什么</p></a>
+	 				<a href="#"><p>呢？”“我怕你听不懂！”这熊孩纸，妈现在给你打一套啊？！！！</p></a>
+	 				<div class="comment">
+						<h2>1220好笑 · <a href="#">165 评论</a></h2>
+						<div class="face ">
+							<a href="#"><img src="./images/funny.png" alt=""></a>
+							<a href="#"><img src="./images/not_funny.png" alt=""></a>
+							<a href="#"><img src="./images/comment.png" alt=""></a>
+				        </div>	
+						<div class="share">
+							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">微信</a>
+							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">QQ</a>
+							<a class="share-qzone" data-type="qznoe" title="分享到QQ空间" rel="nofollow">QQ空间</a>
+							<a class="share-webo" data-type="webo" title="分享到微博" rel="nofollow">微博</a>
+						</div>
+					</div>
+				</div>		
+	 		</div>
+	 		<div>
+	 			<img class="picture" src="./images/hhh.png">
+	 			<h1>莫纳的世界</h1>
+	 			<h4>24</h4>
+	 			<div class="second clearfix">
+	 				<a href="#"><p>如果必须要在其中选一个男朋友有，你会选谁</p></a>
+	 				<a href="#"><img src="./images/rrr.jpg" alt=""></a>
+	 				<div class="comment">
+						<h2>1220好笑 · <a href="#">165 评论</a></h2>
+						<div class="face ">
+							<a href="#"><img src="./images/funny.png" alt=""></a>
+							<a href="#"><img src="./images/not_funny.png" alt=""></a>
+							<a href="#"><img src="./images/comment.png" alt=""></a>
+				        </div>	
+						<div class="share">
+							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">微信</a>
+							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">QQ</a>
+							<a class="share-qzone" data-type="qznoe" title="分享到QQ空间" rel="nofollow">QQ空间</a>
+							<a class="share-webo" data-type="webo" title="分享到微博" rel="nofollow">微博</a>
+						</div>
+					</div>
+				</div>		
+	 		</div>
+	 		<!-- <div>
+	 			<div class="last">
+	 				<ul>
+	 					<li><a href="#">1</a></li>
+	 					<li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">15</a></li>
+	 				</ul>
+	 			</div>
+	 		</div> -->
+	 	</div>
+	 	<div class="right">
+	 	 	<div class="right-picture">
+	 			<img class="right-picture1" src="./images/inform.png">
+                <img class="right-picture2" src="./images/456.png">
+                <img class="right-picture3" src="./images/we.png">
+                <img class="right-picture3" src="./images/we.png">
+                <img class="right-picture3" src="./images/qxw.png">
+                <img class="right-picture3" src="./images/qxw.png">
+                <img class="right-picture4" src="./images/ttt.png">
+                <a href="#">把糗事百科加入收藏夹</a>
+                <img class="right-picture2" src="./images/lll.png">
+	 		</div>
+	 	</div>
+	</div>
+	<div class="bottom">
+	    <div>
+		    <img class="bottom-picture1" src="./images/imgad.jpg">
+			<div class="foot">
+				<ul>
+					<li><a href="#">关于</a></li>
+					<li><a href="#">帮助</a></li>
+					<li><a href="#">下载</a></li>
+					<li><a href="#">关注</a></li>
+					<li><a href="#">组织</a></li>
+				</ul>
+			</div>
+			<div class="small-title">
+				<ul>
+					<li><a href="#">加入我们</a></li>
+					<li><a href="#">用户协议</a></li>
+					<li><a href="#">iphone 客户端</a></li>
+					<li><a href="#">新浪微博</a></li>
+					<li><a href="#">官方粉丝群</a></li>
+				</ul>
+			</div>
+			<div class="small-title1">
+				<ul>
+					<li><a href="#">关于糗百</a></li>
+					<li><a href="#">在线反馈</a></li>
+					<li><a href="#">Android 客户端</a></li>
+					<li><a href="#">微信</a></li>
+					<li><a href="#">网站反馈群</a></li>
+				</ul>
+			</div>
+			<div class="small-title2">
+				<ul>
+					<li><a href="#">联系方式</a></li>
+					<li><a href="#">隐私政策</a></li>
+					<li><a href="#">QQ空间</a></li>
+				</ul>
+			</div>
+			 <hr width=800 size=1 color=#aaa align:center noshade>
+			<div class="finally">
+				<h5>互联网ICP备案：京ICP备14028348号-1 广播电视节目制作经营许可证：（京）字第08319号 网络文化经营许可证：京网文[2017]2369-247号  </h5>
+				<h5>电信与信息服务业务经营许可证：京ICP证140448号 计算机信息网络国际联网单位备案：京公网安备11010502031601号  </h5>
+				<h5>友际无限（北京）科技有限公司 违法和不良信息举报电话：010-84872896 邮箱：kefu@qiushibaike.com</h5>
+				<h5>© Qiushibaike.com 糗事百科版权所有</h5>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>

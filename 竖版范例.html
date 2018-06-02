@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        html,body,ul,li {
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix::after {
+            height: 0;
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .left,.right {
+            float: left;
+        }
+        .left {
+            height: 100px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        .left ul {
+            height: 300px;
+            width: 200px;
+        }
+        .left ul li {
+            height: 100px;
+            width: 150px;
+            line-height: 100px;
+            text-align: center;
+            list-style: none;
+        }
+        .right ul {
+
+        }
+        .right ul li {
+            height: 30px;
+            width: 50px;
+            line-height: 30px;
+            text-align: center;
+            list-style: none;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="left">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".right ul li").mouseover(function(){
+            var index = $(this).index();
+            if(index==0){
+                $(".left ul").stop().animate({"margin-top":"0"},500);
+            };
+            if(index==1){
+                $(".left ul").stop().animate({"margin-top":"-100px"},500);
+            };
+            if(index==2){
+                $(".left ul").stop().animate({"margin-top":"-200px"},500);
+            };
+        })
+    </script>
+</body>
+</html>

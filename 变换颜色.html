@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+    </head>
+    <style media="screen">
+        .toggle-div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+        .bg1 {
+            background: red;
+        }
+        .bg2 {
+            background: green;
+        }
+    </style>
+    <body>
+        <div id="container">
+            <button type="button" v-on:click="toggle" name="button">Toggle</button>
+            <button type="button" name="button" v-on:click="toggleBgRed">红色</button>
+            <button type="button" name="button" v-on:click="toggleGreen">绿色</button>
+            <div class="toggle-div" v-show="isShow" v-bind:class="toggleBg ? 'bg1' : 'bg2'"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#container",
+            data: {
+                isShow: false,
+                toggleBg: false,
+            },
+            methods: {
+                toggle: function(){
+                    this.isShow = this.isShow ? false : true;
+                },
+                toggleBgRed: function(){
+                    this.toggleBg = true;
+                },
+                toggleGreen: function(){
+                    this.toggleBg = false;
+                }
+            }
+        })
+    </script>
+</html>
